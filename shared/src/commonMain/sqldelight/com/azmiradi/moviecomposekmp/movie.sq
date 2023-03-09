@@ -1,0 +1,24 @@
+CREATE TABLE movie (
+  id INTEGER PRIMARY KEY NOT NULL,
+  overview TEXT NOT NULL,
+  title TEXT NOT NULL,
+  posterPath TEXT NOT NULL,
+  voteAverage TEXT NOT NULL
+);
+CREATE INDEX movie_title ON movie(title);
+
+selectAll:
+SELECT *
+FROM movie;
+
+insert:
+INSERT INTO movie(id, overview, title, posterPath, voteAverage)
+VALUES (?, ?, ?, ?, ?);
+
+selectByID:
+SELECT *
+FROM movie
+WHERE id = ?;
+
+deleteByID:
+DELETE FROM movie WHERE id = ?;
